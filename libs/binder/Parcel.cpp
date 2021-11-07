@@ -592,11 +592,7 @@ void Parcel::updateWorkSourceRequestHeaderPosition() const {
     }
 }
 
-#if defined(__ANDROID_VNDK__)
-constexpr int32_t kHeader = B_PACK_CHARS('V', 'N', 'D', 'R');
-#else
 constexpr int32_t kHeader = B_PACK_CHARS('S', 'Y', 'S', 'T');
-#endif
 
 // Write RPC headers.  (previously just the interface token)
 status_t Parcel::writeInterfaceToken(const String16& interface)
